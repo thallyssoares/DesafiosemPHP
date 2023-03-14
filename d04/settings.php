@@ -13,30 +13,19 @@
     <main>
         <?php 
         
-            $hr = $_GET["hr"];
-            $hr = strtoupper($hr);
-            //verificação se o valor digitado ta correto
+            $hr = strtoupper($_GET["hr"]);
             
-            if($hr != "M"){
-                if($hr != "V"){
-                    if($hr != "N"){
-                        echo "<p>O valor digitado não corresponde a um valor permitido</p>";
-                    }
-                }
-                
+            //verificação se o valor digitado ta correto
+            if($hr == "M"){
+                echo "<p>Bom Dia</p>";
+            } elseif($hr == "V"){
+                echo "<p>Boa Tarde</p>";
+            } elseif($hr == "N"){
+                echo "<p>Boa noite</p>";
+            } else {
+                echo "<p>Valor digitado incorreto</p>";
             }
-            else {
-
-                //[o codigo nao ta identificando corretamente qual o valor digitado, nao mostra nd quando é "V" ou "N"
-
-                if($hr == "V"){
-                    echo "$hr Bom Dia!!";
-
-                } else{
-                    echo "$hr Boa Teste";
-                }
-            }
-        
+            
         
         ?>
 
