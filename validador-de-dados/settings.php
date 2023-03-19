@@ -29,15 +29,19 @@
             } elseif($estCivil != "S" && $estCivil != "C" && $estCivil != "V" && $estCivil != "D"){
                 echo "Valores digitados são incorretos";
             }else{
-                echo "Logado. Seus dados são:
-                <ul>
-                    <li>Nome: $nome</li>
-                    <li>Idade: $idade</li>
-                    <li>Salario: $salario</li>
-                    <li>Sexo: $sexo</li>
-                    <li>Estado Civil: $estCivil</li>
-                </ul>
-                ";
+                $user = array("Nome"=>$nome, 
+                "Idade"=>$idade, 
+                "Salario"=>$salario, 
+                "Sexo"=>$sexo, 
+                "Estado Civil"=>$estCivil); //array com os dados do usuario.
+                
+                foreach($user as $indice => $valor){
+                    echo "$indice: $valor <br>";                
+                    //foreach varre o array e pega o $indice e o $valor correspondente a esse indice e mostra na tela.
+                }
+                
+                
+
             }
         
         ?>
