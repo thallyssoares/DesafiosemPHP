@@ -12,35 +12,16 @@
             $num = $_GET["num"];
             $oper = strtoupper($_GET["oper"]);
 
-            function calc($nume, $opera){
-                if($opera == "SUM"){
-                    $opera = "+";
-                } elseif($opera == "MULTI"){
-                    $opera = "*";
-                } elseif($opera == "SUB"){
-                    $opera = "-";
-                } else{
-                    $opera = "/";
-                }
-
-                for($i=1;$i<=10;$i++){
-                    $calc = $nume . $opera . $i;
-                    echo "<p>A tabuada de $nume é: <br>
-                            $nume $opera $i = $calc <br>
-                    </p>";
-                }
-
-            }
-            switch($oper){
+            function calc($num, $oper){
+                switch($oper){
                 case "MULTI":
-                    /** 
-                    *for($i=1;$i<=10;$i++){
-                    *    $calc = $num * $i;
-                    *  echo "<p>A tabuada de $num é: <br>
-                    *           $num x $i = $calc <br>
-                    *    </p>";
-                    *} */
-                    calc($num, $oper);
+                    
+                    for($i=1;$i<=10;$i++){
+                        $calc = $num * $i;
+                      echo "<p>A tabuada de $num é: <br>
+                               $num x $i = $calc <br>
+                        </p>";
+                    } 
                     break;
                 case "SUB":
                     for($i=1;$i<=10;$i++){
@@ -52,7 +33,7 @@
                     break;
                 case "DIV":
                     for($i=1;$i<=10;$i++){
-                        $calc = $num / $i;
+                        $calc = number_format(($num / $i), 1);
                         echo "<p>A tabuada de $num é: <br>
                                 $num / $i = $calc <br>
                         </p>";
@@ -67,6 +48,9 @@
                     }
                     break;
             }
+
+            }
+            calc($num, $oper);
 
         
         ?>
